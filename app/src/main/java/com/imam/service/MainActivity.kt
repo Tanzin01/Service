@@ -14,36 +14,30 @@ import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 private val TAG = "YourActivity"
-        private val prepareVpnLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            // Permission granted, you can start your VPN service here
-            Log.d(TAG, "VPN permission granted")
-        } else {
-            // Permission denied or user canceled
-            Log.d(TAG, "VPN permission denied")
-        }
-    }
-
-
-
+  
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
   
   
-        askPermission()
+        
 
         val btn: Button = findViewById(R.id.btn)
 
         btn.setOnClickListener {
-            startNotificationService()
+        
+        startVpnService()
+            
         }
 
 
     }
     
     
-    fun askPermission() {
+    fun getVpnPermission() {
+    
+    
+
         
 
         val intent = VpnService.prepare(this)
@@ -55,5 +49,40 @@ private val TAG = "YourActivity"
     private fun startNotificationService() {
         val serviceIntent = Intent(this, MyBackgroundService::class.java)
         ContextCompat.startForegroundService(this, serviceIntent)
+    }
+    
+    fun hasVpnPermission(): Boolean {
+    val vpnPermission = VpnService.prepare(this)
+    return vpnPermission == null
+   }
+   
+   fun startVpnService() {
+    if (hasVpnPermission()) {
+    
+       startNotificationService()
+       
+        val intent = Intent(this, MyBackgroundService::class.java)
+       startService(intent)
+    } else {
+        // Handle the case where VPN permission is not granted
+        getVpnPermission()
+        
+        //now starts the vpn
+        startNotificationService()
+       
+        val intent = Intent(this, MyBackgroundService::class.java)
+        startService(intent)
+        
+    }
+   }//startVpnS
+   
+   private val prepareVpnLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            // Permission granted, you can start your VPN service here
+            Log.d(TAG, "VPN permission granted")
+        } else {
+            // Permission denied or user canceled
+            Log.d(TAG, "VPN permission denied")
+        }
     }
 }
