@@ -1,0 +1,65 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/java/com/imam/service/MyBackgroundService.kt",
+      "selection": {
+        "end": {
+          "column": 35,
+          "index": 2874,
+          "line": 85
+        },
+        "start": {
+          "column": 23,
+          "index": 2862,
+          "line": 85
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/java/com/imam/service/MainActivity.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 376,
+          "line": 12
+        },
+        "start": {
+          "column": 0,
+          "index": 376,
+          "line": 12
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Service/app/build.gradle.kts",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/AndroidManifest.xml",
+      "selection": {
+        "end": {
+          "column": 12,
+          "index": 1052,
+          "line": 22
+        },
+        "start": {
+          "column": 12,
+          "index": 1052,
+          "line": 22
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/AndroidManifest.xml"
+}

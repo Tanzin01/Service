@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/java/com/imam/service/MainActivity.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 826,
+          "line": 26
+        },
+        "start": {
+          "column": 0,
+          "index": 826,
+          "line": 26
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Service/app/src/main/java/com/imam/service/MainActivity.kt"
+}
